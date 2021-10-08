@@ -30,6 +30,6 @@ public class SwaggerConfig {
                 .title("Webservice Referentiels Sudoc")
                 .description("Ce Web Service permet d'obtenir sous forme de liste, en XML ou JSON, un référentiel<br />")
                 .version("1.0.0")
-                .contact(new Contact("ACT", "https://github.com/abes-esr/abes-referentiels", "act@abes.fr")).build();
+                .contact(new Contact("ACT", "https://github.com/abes-esr/apicom-referentiels", "act@abes.fr")).build();
     }
 }
