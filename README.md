@@ -24,7 +24,7 @@ Ces API viennent exposer les données contenues dans les tables Oracle de l'Abes
 - LANG_URI : pour le endpoint "languris"
 - COUNTRY_URI : pour le endpoint "geonames"
 
-A noter : la structure ces tables n'est pas actuellement documenté dans le github.
+A noter : la structure de ces tables n'est pas actuellement documentée dans le github.
 
 Un système de cache est en place. Il permet d'éviter de solliciter la base Oracle à chaque appel des API. Le cache a une durée de vie qui est réglée par la variable `cron.majCache`. Cette variable permet de vider le cache à interval de temps régulier. Exemple ici :
 https://github.com/abes-esr/apicom-referentiels/blob/master/src/main/resources/application.properties#L1
