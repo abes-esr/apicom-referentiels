@@ -19,7 +19,7 @@ Le but premier de ces API est de mutualiser l'usage de ces référentiels dans l
 ## Architecture
 
 Ces API viennent exposer les données contenues dans les tables Oracle de l'Abes :
-- LANG_LABEL : pour le endpoint "langues"
+- LANG_LABEL et LANG_ISO_639_2_TO_1 : pour le endpoint "langues"
 - COUNTRY_LABEL : pour le endpoint "pays"
 - LANG_URI : pour le endpoint "languris"
 - COUNTRY_URI : pour le endpoint "geonames"
