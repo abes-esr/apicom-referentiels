@@ -3,16 +3,16 @@
 API qui retournent des référentiels sous forme de listes (Langues, Pays, Geonames, etc.).
 
 Les référentiels sont accessibles en JSON aux adresses suivantes : 
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/langues.json
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/pays.json
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/languris.json
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/geonames.json
+- https://apicom.sudoc.fr/wsReferentiels/langues.json
+- https://apicom.sudoc.fr/wsReferentiels/pays.json
+- https://apicom.sudoc.fr/wsReferentiels/languris.json
+- https://apicom.sudoc.fr/wsReferentiels/geonames.json
 
 Il est également possible d'obtenir les valeurs au format XML :
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/langues.xml
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/pays.xml
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/languris.xml
-- https://apicom.sudoc.fr/wsReferentiels/wsReferentiels/geonames.xml
+- https://apicom.sudoc.fr/wsReferentiels/langues.xml
+- https://apicom.sudoc.fr/wsReferentiels/pays.xml
+- https://apicom.sudoc.fr/wsReferentiels/languris.xml
+- https://apicom.sudoc.fr/wsReferentiels/geonames.xml
 
 Le but premier de ces API est de mutualiser l'usage de ces référentiels dans les applications développées par l'Abes.
 
