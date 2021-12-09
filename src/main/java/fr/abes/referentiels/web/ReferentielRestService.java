@@ -19,22 +19,22 @@ public class ReferentielRestService {
     @Autowired
     ReferentielService service;
 
-    @GetMapping(value="/langues", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @GetMapping(value="/v1/langues", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
     public List<Langue> langues() {
         return service.getLangues();
     }
 
-    @GetMapping(value="/pays", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @GetMapping(value="/v1/pays", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
     public List<Pays> pays() {
         return service.getPays();
     }
 
-    @GetMapping(value="/geonames", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @GetMapping(value="/v1/geonames", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
     public List<Geoname> geonames() {
         return service.getGeonames();
     }
 
-    @GetMapping(value="/languris", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @GetMapping(value="/v1/languris", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
     public List<LangUri> languris() {
         return service.getLangUris();
     }
