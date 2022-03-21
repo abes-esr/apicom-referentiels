@@ -2,7 +2,7 @@
 
 API qui retournent des référentiels sous forme de listes (Langues, Pays, Geonames, etc.).
 
-Les référentiels sont accessibles en JSON aux adresses suivantes : 
+Les référentiels sont accessibles en JSON aux adresses suivantes (url de prod) : 
 - https://apicom.sudoc.fr/wsReferentiels/v1/langues.json
 - https://apicom.sudoc.fr/wsReferentiels/v1/pays.json
 - https://apicom.sudoc.fr/wsReferentiels/v1/languris.json
