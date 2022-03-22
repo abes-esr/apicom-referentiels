@@ -1,9 +1,6 @@
 package fr.abes.referentiels.web;
 
-import fr.abes.referentiels.entities.Geoname;
-import fr.abes.referentiels.entities.LangUri;
-import fr.abes.referentiels.entities.Langue;
-import fr.abes.referentiels.entities.Pays;
+import fr.abes.referentiels.entities.*;
 import fr.abes.referentiels.service.ReferentielService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +13,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-public class ReferentielRestService {
+public class ReferentielRestControler {
     @Autowired
     ReferentielService service;
 
@@ -42,5 +39,11 @@ public class ReferentielRestService {
     @GetMapping(value="/v1/languris", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
     public List<LangUri> languris() {
         return service.getLangUris();
+    }
+
+    @Operation(summary = "Retourne la liste des bibliotheques PCP")
+    @GetMapping(value="/v1/pcplibs", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    public List<PcpLibrary> pcplibs() {
+        return service.getPcpLibraries();
     }
 }

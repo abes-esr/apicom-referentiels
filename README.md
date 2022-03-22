@@ -1,20 +1,24 @@
 # apicom-referentiels
 
-API qui retournent des référentiels sous forme de listes (Langues, Pays, Geonames, etc.).
+API qui retournent des référentiels sous forme de listes (Langues, Pays, Geonames, PcpLibs, etc.).
 
 Les référentiels sont accessibles en JSON aux adresses suivantes (url de prod) : 
 - https://apicom.sudoc.fr/wsReferentiels/v1/langues.json
 - https://apicom.sudoc.fr/wsReferentiels/v1/pays.json
 - https://apicom.sudoc.fr/wsReferentiels/v1/languris.json
 - https://apicom.sudoc.fr/wsReferentiels/v1/geonames.json
+- https://apicom.sudoc.fr/wsReferentiels/v1/pcplibs.json
 
 Il est également possible d'obtenir les valeurs au format XML :
 - https://apicom.sudoc.fr/wsReferentiels/v1/langues.xml
 - https://apicom.sudoc.fr/wsReferentiels/v1/pays.xml
 - https://apicom.sudoc.fr/wsReferentiels/v1/languris.xml
 - https://apicom.sudoc.fr/wsReferentiels/v1/geonames.xml
+- https://apicom.sudoc.fr/wsReferentiels/v1/pcplibs.xml
 
 Le but premier de ces API est de mutualiser l'usage de ces référentiels dans les applications développées par l'Abes.
+
+Description OpenAPI : https://apicom.sudoc.fr/wsReferentiels/swagger-ui.html 
 
 ## Architecture
 
@@ -23,6 +27,7 @@ Ces API viennent exposer les données contenues dans les tables Oracle de l'Abes
 - COUNTRY_LABEL : pour le endpoint "pays"
 - LANG_URI : pour le endpoint "languris"
 - COUNTRY_URI : pour le endpoint "geonames"
+- VIEW_LIST_BIBS : pour le endpoint "pcplibs"
 
 A noter : la structure de ces tables n'est pas actuellement documentée dans le github.
 
