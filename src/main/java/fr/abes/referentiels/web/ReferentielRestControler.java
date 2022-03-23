@@ -41,9 +41,7 @@ public class ReferentielRestControler {
         return service.getLangUris();
     }
 
-    //@Operation(summary = "Retourne la liste des bibliotheques PCP")
-    //@GetMapping(value="/v1/pcplibs", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
-    //public List<PcpLibrary> pcplibs() {
-    //    return service.getPcpLibraries();
-    //}
+    @Operation(summary = "Retourne la liste des RCR")
+    @GetMapping(value="/v1/pcplibs", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    public List<PcpLibrary> pcplibs() { return service.getPcpLibraries(); }
 }

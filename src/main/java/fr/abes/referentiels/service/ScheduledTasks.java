@@ -13,7 +13,8 @@ public class ScheduledTasks {
             @CacheEvict(value = "langues"),
             @CacheEvict(value = "pays"),
             @CacheEvict(value = "geonames"),
-            @CacheEvict(value = "languris")
+            @CacheEvict(value = "languris"),
+            @CacheEvict(value = "pcplibraries")
             })
     @Scheduled(cron = "${cron.majCache}")
     public void videCaches() {

@@ -1,13 +1,7 @@
 package fr.abes.referentiels.service;
 
-import fr.abes.referentiels.entities.Geoname;
-import fr.abes.referentiels.entities.LangUri;
-import fr.abes.referentiels.entities.Langue;
-import fr.abes.referentiels.entities.Pays;
-import fr.abes.referentiels.repository.GeonameRepository;
-import fr.abes.referentiels.repository.LangUriRepository;
-import fr.abes.referentiels.repository.LangueRepository;
-import fr.abes.referentiels.repository.PaysRepository;
+import fr.abes.referentiels.entities.*;
+import fr.abes.referentiels.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -29,6 +23,9 @@ public class ReferentielService {
     @Autowired
     private LangUriRepository langUriRepository;
 
+    @Autowired
+    private PcpLibraryRepository pcpLibraryRepository;
+
 
     @Cacheable("langues")
     public List<Langue> getLangues() {
@@ -46,5 +43,9 @@ public class ReferentielService {
 
     @Cacheable("languris")
     public List<LangUri> getLangUris() { return langUriRepository.findAllByOrderByCodeAsc();
+    }
+
+    @Cacheable("pcplibraries")
+    public List<PcpLibrary> getPcpLibraries() { return pcpLibraryRepository.findAllByOrderByRcrAsc();
     }
 }
