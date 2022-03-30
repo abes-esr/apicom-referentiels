@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableCaching
 @EnableScheduling
-@OpenAPIDefinition(servers = {@Server(url = "/", description = "Default Server URL")},
+@OpenAPIDefinition(servers = {@Server(url = "/wsReferentiels/", description = "Default Server URL")},
         info = @Info(title = "Webservice Referentiels Sudoc", version = "1.0", description = "Ce Web Service permet d'obtenir sous forme de liste, en XML ou JSON, un referentiel"))
 public class ReferentielApplication extends SpringBootServletInitializer {
 
