@@ -17,31 +17,67 @@ public class ReferentielRestControler {
     @Autowired
     ReferentielService service;
 
-    @Operation(summary = "Retourne la liste des langues")
-    @GetMapping(value="/v1/langues", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @Operation(summary = "Retourne la liste des langues en JSON")
+    @GetMapping(value = {"/v1/langues", "/v1/langues.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Langue> langues() {
         return service.getLangues();
     }
 
-    @Operation(summary = "Retourne la liste des pays")
-    @GetMapping(value="/v1/pays", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @Operation(summary = "Retourne la liste des langues en XML")
+    @GetMapping(value = "/v1/langues.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<Langue> languesXML() {
+        return service.getLangues();
+    }
+
+
+    @Operation(summary = "Retourne la liste des pays en JSON")
+    @GetMapping(value = {"/v1/pays", "/v1/pays.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Pays> pays() {
         return service.getPays();
     }
 
-    @Operation(summary = "Retourne la liste des geonames")
-    @GetMapping(value="/v1/geonames", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @Operation(summary = "Retourne la liste des pays en XML")
+    @GetMapping(value = "/v1/pays.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<Pays> paysXML() {
+        return service.getPays();
+    }
+
+
+    @Operation(summary = "Retourne la liste des geonames en JSON")
+    @GetMapping(value = {"/v1/geonames", "/v1/geonames.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Geoname> geonames() {
         return service.getGeonames();
     }
 
-    @Operation(summary = "Retourne la liste des langUris")
-    @GetMapping(value="/v1/languris", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @Operation(summary = "Retourne la liste des geonames en XML")
+    @GetMapping(value = "/v1/geonames.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<Geoname> geonamesXML() {
+        return service.getGeonames();
+    }
+
+
+    @Operation(summary = "Retourne la liste des langUris en JSON")
+    @GetMapping(value = {"/v1/languris", "/v1/languris.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<LangUri> languris() {
         return service.getLangUris();
     }
 
-    @Operation(summary = "Retourne la liste des RCR")
-    @GetMapping(value="/v1/pcplibs", produces = { MediaType.APPLICATION_JSON_UTF8_VALUE, MediaType.APPLICATION_XML_VALUE })
-    public List<PcpLibrary> pcplibs() { return service.getPcpLibraries(); }
+    @Operation(summary = "Retourne la liste des langUris en XML")
+    @GetMapping(value = "/v1/languris.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<LangUri> langurisXML() {
+        return service.getLangUris();
+    }
+
+
+    @Operation(summary = "Retourne la liste des RCR en JSON")
+    @GetMapping(value = {"/v1/pcplibs", "/v1/pcplibs.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<PcpLibrary> pcplibs() {
+        return service.getPcpLibraries();
+    }
+
+    @Operation(summary = "Retourne la liste des RCR en XML")
+    @GetMapping(value = "/v1/pcplibs.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<PcpLibrary> pcplibsXML() {
+        return service.getPcpLibraries();
+    }
 }
