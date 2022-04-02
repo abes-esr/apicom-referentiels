@@ -48,7 +48,12 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <!--Provoque un WARNING: Illegal reflective access by nonapi.io.github.classgraph.classpath.CallStackReader-->
+        <!--Provoque un WARNING: Illegal reflective access by nonapi.io.github.classgraph.classpath.CallStackReader si Classgraph n'est pas ajouté. Elle est utilisée par Springdoc-->
+        <dependency>
+            <groupId>io.github.classgraph</groupId>
+            <artifactId>classgraph</artifactId>
+            <version>4.8.143</version>
+        </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
