@@ -41,5 +41,11 @@ class ReferentielsApplicationTests {
         assertThat(service.getPays()).extracting("code").containsSequence("FR");
     }
 
+    @Test
+    @DisplayName("getPcpLibsOk")
+    void getPcpLibsOk() {
+        assertThat(service.getPcpLibraries().size()>100);
+    }
+
 
 }
