@@ -49,8 +49,10 @@ public class ReferentielService {
     public List<PcpLibrary> getPcpLibraries() { return pcpLibraryRepository.findAllByOrderByRcrAsc();
     }
 
+    @Cacheable("pcp2rcr")
     public List<PcpLibrary> getPcpToRcr(String pcp) { return pcpLibraryRepository.findRcrbyPcp(pcp);  }
 
+    @Cacheable("pcp2rcrMulti")
     public List<PcpLibrary> getPcpToRcrMulti(List<String> pcp) {
         return pcpLibraryRepository.findRcrbyPcpMulti(pcp);
     }
