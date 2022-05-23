@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -80,4 +83,15 @@ public class ReferentielRestControler {
     public List<PcpLibrary> pcplibsXML() {
         return service.getPcpLibraries();
     }
+
+    @Operation(summary = "Retourne la liste des RCR d'un PCP donné en pramètre")
+    @GetMapping(value = "/v1/pcp2rcr/{pcp}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<PcpLibrary> pcp2rcr(@PathVariable String pcp) { return service.getPcpToRcr(pcp); }
+
+    @Operation(summary = "Retourne la liste des RCR des PCPs donnés en paramètre")
+    @GetMapping(value = "/v1/multipcp2rcr/{pcp}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Set<PcpLibrary> pcp2rcrMulti(@PathVariable List<String> pcp) {
+        return service.getPcpToRcrMulti(pcp).stream().collect(Collectors.toSet());
+    }
+
 }
