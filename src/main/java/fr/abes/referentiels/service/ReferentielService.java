@@ -50,10 +50,6 @@ public class ReferentielService {
     }
 
     @Cacheable("pcp2rcr")
-    public List<PcpLibrary> getPcpToRcr(String pcp) { return pcpLibraryRepository.findRcrbyPcp(pcp);  }
+    public List<String> getPcpToRcr(List<String> pcp) { return pcpLibraryRepository.findRcrbyPcp(pcp);  }
 
-    @Cacheable("pcp2rcrMulti")
-    public List<PcpLibrary> getPcpToRcrMulti(List<String> pcp) {
-        return pcpLibraryRepository.findRcrbyPcpMulti(pcp);
-    }
 }

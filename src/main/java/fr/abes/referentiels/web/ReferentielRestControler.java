@@ -84,14 +84,8 @@ public class ReferentielRestControler {
         return service.getPcpLibraries();
     }
 
-    @Operation(summary = "Retourne la liste des RCR d'un PCP donné en pramètre")
+    @Operation(summary = "Retourne la liste des RCR d'une liste de PCP donnés en paramètre")
     @GetMapping(value = "/v1/pcp2rcr/{pcp}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<PcpLibrary> pcp2rcr(@PathVariable String pcp) { return service.getPcpToRcr(pcp); }
-
-    @Operation(summary = "Retourne la liste des RCR des PCPs donnés en paramètre")
-    @GetMapping(value = "/v1/multipcp2rcr/{pcp}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Set<PcpLibrary> pcp2rcrMulti(@PathVariable List<String> pcp) {
-        return service.getPcpToRcrMulti(pcp).stream().collect(Collectors.toSet());
-    }
+    public List<String> pcp2rcr(@PathVariable List<String> pcp) { return service.getPcpToRcr(pcp); }
 
 }
