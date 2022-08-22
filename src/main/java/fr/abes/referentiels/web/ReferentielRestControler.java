@@ -17,18 +17,31 @@ public class ReferentielRestControler {
     @Autowired
     ReferentielService service;
 
+    //TODO : supprimer les urls langues, langues.json et langues.xml, pour utiliser à la place iso639-2B
     @Operation(summary = "Retourne la liste des langues en JSON")
-    @GetMapping(value = {"/v1/langues", "/v1/langues.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = {"/v1/langues", "/v1/langues.json", "/v1/iso639-2B", "/v1/iso639-2B.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Langue> langues() {
         return service.getLangues();
     }
 
     @Operation(summary = "Retourne la liste des langues en XML")
-    @GetMapping(value = "/v1/langues.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    @GetMapping(value = {"/v1/langues.xml", "/v1/iso639-2B.xml"}, produces = MediaType.APPLICATION_XML_VALUE)
     public List<Langue> languesXML() {
         return service.getLangues();
     }
 
+
+    @Operation(summary = "Retourne la liste des langues ISO639_3 en JSON")
+    @GetMapping(value = {"/v1/iso639-3", "/v1/iso639-3.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<LangIso639_3> langIso6393s() {
+        return service.getLangsISO639_3();
+    }
+
+    @Operation(summary = "Retourne la liste des langues ISO639_3 en XML")
+    @GetMapping(value = "/v1/iso639-3.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<LangIso639_3> langIso6393sXML() {
+        return service.getLangsISO639_3();
+    }
 
     @Operation(summary = "Retourne la liste des pays en JSON")
     @GetMapping(value = {"/v1/pays", "/v1/pays.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -80,4 +93,37 @@ public class ReferentielRestControler {
     public List<PcpLibrary> pcplibsXML() {
         return service.getPcpLibraries();
     }
+
+
+    @Operation(summary = "Retourne la liste des codes d'écriture en JSON")
+    @GetMapping(value = {"/v1/ecritures", "/v1/ecritures.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CodeEcriture> ecritures() {
+        return service.getCodeEcritures();
+    }
+
+    @Operation(summary = "Retourne la liste des codes d'écriture en XML")
+    @GetMapping(value = "/v1/ecritures.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<CodeEcriture> ecrituresXML() {
+        return service.getCodeEcritures();
+    }
+
+
+    @Operation(summary = "Retourne la liste des codes de translitteration en JSON")
+    @GetMapping(value = {"/v1/translitterations", "/v1/translitterations.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CodeTranslitteration> translitterations() { return service.getCodeTranslitterations();}
+
+    @Operation(summary = "Retourne la liste des codes de translitteration en XML")
+    @GetMapping(value = "/v1/translitterations.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<CodeTranslitteration> translitterationsXML() {
+        return service.getCodeTranslitterations();
+    }
+
+
+    @Operation(summary = "Retourne la liste des roles / codes de fonction en JSON")
+    @GetMapping(value = {"/v1/roles", "/v1/roles.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Role> roles() { return service.getRoles();}
+
+    @Operation(summary = "Retourne la liste des roles / codes de fonction en XML")
+    @GetMapping(value = "/v1/roles.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<Role> rolesXML() { return service.getRoles();}
 }
