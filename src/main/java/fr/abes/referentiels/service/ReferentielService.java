@@ -76,6 +76,6 @@ public class ReferentielService {
     }
 
     @Cacheable("roles")
-    public List<Role> getRoles() { return roleRepository.findAllByOrderByRelationship_frAsc();
+    public List<Role> getRoles() { return roleRepository.findAllByOrderByRelationshipFrAsc();
     }
 }
