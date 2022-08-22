@@ -8,7 +8,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name="LANG_ISO_639_3")
 @Getter
 @Setter
 @NoArgsConstructor
