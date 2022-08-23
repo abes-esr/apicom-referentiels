@@ -47,5 +47,32 @@ class ReferentielsApplicationTests {
         assertThat(service.getPcpLibraries().size()>100);
     }
 
+    @Test
+    @DisplayName("getLangsISO639_3Ok")
+    void getLangsISO639_3Ok() {
+        assertThat(service.getLangsISO639_3().size()>100);
+        assertThat(service.getLangsISO639_3()).extracting("code").containsSequence("fra");
+    }
+
+    @Test
+    @DisplayName("getCodeEcrituresOk")
+    void getCodeEcrituresOk() {
+        assertThat(service.getCodeEcritures().size()>10);
+        assertThat(service.getCodeEcritures()).extracting("code").containsSequence("ba");
+    }
+
+    @Test
+    @DisplayName("getCodeTranslitterationsOk")
+    void getCodeTranslitterationsOk() {
+        assertThat(service.getCodeTranslitterations().size()>5);
+        assertThat(service.getCodeTranslitterations()).extracting("code").containsSequence("a");
+    }
+
+    @Test
+    @DisplayName("getRolesOk")
+    void getRolesOk() {
+        assertThat(service.getRoles().size()>100);
+        assertThat(service.getRoles()).extracting("code").containsSequence("070");
+    }
 
 }
