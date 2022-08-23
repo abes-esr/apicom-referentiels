@@ -11,12 +11,17 @@ import java.util.Date;
 public class ScheduledTasks {
     @Caching(evict = {
             @CacheEvict(value = "langues"),
+            @CacheEvict(value = "langISO639_3"),
             @CacheEvict(value = "pays"),
             @CacheEvict(value = "geonames"),
             @CacheEvict(value = "languris"),
             @CacheEvict(value = "pcplibraries"),
             @CacheEvict(value = "pcp2rcr"),
-            @CacheEvict(value = "pcp2rcrMulti")
+            @CacheEvict(value = "pcp2rcrMulti"),
+            @CacheEvict(value = "pcplibraries"),
+            @CacheEvict(value = "codeEcritures"),
+            @CacheEvict(value = "codeTranslitterations"),
+            @CacheEvict(value = "roles")
             })
     @Scheduled(cron = "${cron.majCache}")
     public void videCaches() {
