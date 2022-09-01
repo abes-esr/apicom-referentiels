@@ -24,16 +24,16 @@ public class ReferentielApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         //Pr les order by Fr : é pas à la fin (voir code d'écritures par ex)
-        Locale.setDefault(Locale.FRANCE);
+       // Locale.setDefault(Locale.FRANCE);
 
         SpringApplication.run(ReferentielApplication.class, args);
     }
 
-   /*@Bean
+    @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver slr = new SessionLocaleResolver();
         slr.setDefaultLocale(Locale.FRANCE);
         return slr;
-    }*/
+    }
 }
 
