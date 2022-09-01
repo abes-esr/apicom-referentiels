@@ -106,24 +106,24 @@ public class ReferentielRestControler {
     @Operation(summary = "Retourne la liste des codes d'écriture en JSON")
     @GetMapping(value = {"/v1/ecritures", "/v1/ecritures.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<CodeEcriture> ecritures() {
-        return service.getCodeEcritures();
+        return service.getCodesEcritures();
     }
 
     @Operation(summary = "Retourne la liste des codes d'écriture en XML")
     @GetMapping(value = "/v1/ecritures.xml", produces = MediaType.APPLICATION_XML_VALUE)
     public List<CodeEcriture> ecrituresXML() {
-        return service.getCodeEcritures();
+        return service.getCodesEcritures();
     }
 
 
     @Operation(summary = "Retourne la liste des codes de translitteration en JSON")
     @GetMapping(value = {"/v1/translitterations", "/v1/translitterations.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<CodeTranslitteration> translitterations() { return service.getCodeTranslitterations();}
+    public List<CodeTranslitteration> translitterations() { return service.getCodesTranslitterations();}
 
     @Operation(summary = "Retourne la liste des codes de translitteration en XML")
     @GetMapping(value = "/v1/translitterations.xml", produces = MediaType.APPLICATION_XML_VALUE)
     public List<CodeTranslitteration> translitterationsXML() {
-        return service.getCodeTranslitterations();
+        return service.getCodesTranslitterations();
     }
 
 
@@ -134,4 +134,13 @@ public class ReferentielRestControler {
     @Operation(summary = "Retourne la liste des roles / codes de fonction en XML")
     @GetMapping(value = "/v1/roles.xml", produces = MediaType.APPLICATION_XML_VALUE)
     public List<Role> rolesXML() { return service.getRoles();}
+
+
+    @Operation(summary = "Retourne la liste des codes musicaux en JSON")
+    @GetMapping(value = {"/v1/musicaux", "/v1/musicaux.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CodeMusical> codesMusicaux() { return service.getCodesMusicaux();}
+
+    @Operation(summary = "Retourne la liste des codes musicaux en XML")
+    @GetMapping(value = "/v1/musicaux.xml", produces = MediaType.APPLICATION_XML_VALUE)
+    public List<CodeMusical> codesMusicauxXML() { return service.getCodesMusicaux();}
 }

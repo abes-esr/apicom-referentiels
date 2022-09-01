@@ -13,6 +13,7 @@ Les référentiels sont accessibles en JSON aux adresses suivantes (url de prod)
 - https://apicom.sudoc.fr/wsReferentiels/v1/ecritures.json
 - https://apicom.sudoc.fr/wsReferentiels/v1/translitterations.json
 - https://apicom.sudoc.fr/wsReferentiels/v1/roles.json
+- https://apicom.sudoc.fr/wsReferentiels/v1/musicaux.json
 
 Il est également possible d'obtenir les valeurs au format XML :
 - https://apicom.sudoc.fr/wsReferentiels/v1/langues.xml
@@ -25,6 +26,7 @@ Il est également possible d'obtenir les valeurs au format XML :
 - https://apicom.sudoc.fr/wsReferentiels/v1/ecritures.xml
 - https://apicom.sudoc.fr/wsReferentiels/v1/translitterations.xml
 - https://apicom.sudoc.fr/wsReferentiels/v1/roles.xml
+- https://apicom.sudoc.fr/wsReferentiels/v1/musicaux.xml
 
 Le but premier de ces API est de mutualiser l'usage de ces référentiels dans les applications développées par l'Abes.
 
@@ -42,6 +44,7 @@ Ces API viennent exposer les données contenues dans les tables Oracle de l'Abes
 - CODE_ECRITURE : pour le endpoint "ecritures"
 - CODE_TRANSLITTERATION : pour le endpoint "translitterations"
 - FNCT_MARC21 : pour le endpoint "roles"
+- CODE_MUSICAL : pour le endpoint "musicaux"
 
 A noter : la structure de ces tables n'est pas actuellement documentée dans le github.
 

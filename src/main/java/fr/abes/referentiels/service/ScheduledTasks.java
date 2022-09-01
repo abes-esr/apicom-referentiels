@@ -19,9 +19,10 @@ public class ScheduledTasks {
             @CacheEvict(value = "pcp2rcr"),
             @CacheEvict(value = "pcp2rcrMulti"),
             @CacheEvict(value = "pcplibraries"),
-            @CacheEvict(value = "codeEcritures"),
-            @CacheEvict(value = "codeTranslitterations"),
-            @CacheEvict(value = "roles")
+            @CacheEvict(value = "codesEcritures"),
+            @CacheEvict(value = "codesTranslitterations"),
+            @CacheEvict(value = "roles"),
+            @CacheEvict(value = "codesMusicaux")
             })
     @Scheduled(cron = "${cron.majCache}")
     public void videCaches() {

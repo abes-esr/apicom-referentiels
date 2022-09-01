@@ -38,6 +38,9 @@ public class ReferentielService {
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
+    private CodeMusicalRepository codeMusicalRepository;
+
 
     @Cacheable("langues")
     public List<Langue> getLangues() {
@@ -70,15 +73,19 @@ public class ReferentielService {
     public List<String> getPcpToRcr(List<String> pcp) { return pcpLibraryRepository.findRcrbyPcp(pcp);  }
 
 
-    @Cacheable("codeEcritures")
-    public List<CodeEcriture> getCodeEcritures() { return codeEcritureRepository.findAllByOrderByLabelAsc();
+    @Cacheable("codesEcritures")
+    public List<CodeEcriture> getCodesEcritures() { return codeEcritureRepository.findAllByOrderByLabelAsc();
     }
 
-    @Cacheable("codeTranslitterations")
-    public List<CodeTranslitteration> getCodeTranslitterations() { return codeTranslitterationRepository.findAllByOrderByCodeAsc();
+    @Cacheable("codesTranslitterations")
+    public List<CodeTranslitteration> getCodesTranslitterations() { return codeTranslitterationRepository.findAllByOrderByCodeAsc();
     }
 
     @Cacheable("roles")
     public List<Role> getRoles() { return roleRepository.findAllByOrderByRelationshipFrAsc();
+    }
+
+    @Cacheable("codesMusicaux")
+    public List<CodeMusical> getCodesMusicaux() { return codeMusicalRepository.findAllByOrderByCodeAsc();
     }
 }

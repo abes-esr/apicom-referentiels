@@ -55,17 +55,17 @@ class ReferentielsApplicationTests {
     }
 
     @Test
-    @DisplayName("getCodeEcrituresOk")
-    void getCodeEcrituresOk() {
-        assertThat(service.getCodeEcritures().size()>10);
-        assertThat(service.getCodeEcritures()).extracting("code").containsSequence("ba");
+    @DisplayName("getCodesEcrituresOk")
+    void getCodesEcrituresOk() {
+        assertThat(service.getCodesEcritures().size()>10);
+        assertThat(service.getCodesEcritures()).extracting("code").containsSequence("ba");
     }
 
     @Test
-    @DisplayName("getCodeTranslitterationsOk")
-    void getCodeTranslitterationsOk() {
-        assertThat(service.getCodeTranslitterations().size()>5);
-        assertThat(service.getCodeTranslitterations()).extracting("code").containsSequence("a");
+    @DisplayName("getCodesTranslitterationsOk")
+    void getCodesTranslitterationsOk() {
+        assertThat(service.getCodesTranslitterations().size()>5);
+        assertThat(service.getCodesTranslitterations()).extracting("code").containsSequence("a");
     }
 
     @Test
@@ -73,6 +73,13 @@ class ReferentielsApplicationTests {
     void getRolesOk() {
         assertThat(service.getRoles().size()>100);
         assertThat(service.getRoles()).extracting("code").containsSequence("070");
+    }
+
+    @Test
+    @DisplayName("getCodesMusicauxOk")
+    void getCodesMusicauxOk() {
+        assertThat(service.getCodesMusicaux().size()>100);
+        assertThat(service.getCodesMusicaux()).extracting("code").containsSequence("wcl");
     }
 
 }
