@@ -10,6 +10,8 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import java.util.Locale;
+
 @SpringBootApplication
 @EnableCaching
 @EnableScheduling
@@ -18,6 +20,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class ReferentielApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
+        //Pr les order by Fr : é pas à la fin (voir code d'écritures par ex)
+        Locale.setDefault(Locale.FRENCH);
+
         SpringApplication.run(ReferentielApplication.class, args);
     }
 
