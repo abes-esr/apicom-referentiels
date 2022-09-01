@@ -71,7 +71,7 @@ public class ReferentielService {
 
 
     @Cacheable("codeEcritures")
-    public List<CodeEcriture> getCodeEcritures() { return codeEcritureRepository.findAllByOrderByCodeAsc();
+    public List<CodeEcriture> getCodeEcritures() { return codeEcritureRepository.findAllByOrderByLabelAsc();
     }
 
     @Cacheable("codeTranslitterations")
