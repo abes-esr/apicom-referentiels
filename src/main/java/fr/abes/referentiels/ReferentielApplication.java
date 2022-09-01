@@ -11,6 +11,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import java.util.Locale;
@@ -23,17 +24,7 @@ import java.util.Locale;
 public class ReferentielApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        //Pr les order by Fr : é pas à la fin (voir code d'écritures par ex)
-       // Locale.setDefault(Locale.FRANCE);
-
         SpringApplication.run(ReferentielApplication.class, args);
-    }
-
-    @Bean
-    public LocaleResolver localeResolver() {
-        SessionLocaleResolver slr = new SessionLocaleResolver();
-        slr.setDefaultLocale(Locale.FRANCE);
-        return slr;
     }
 }
 
