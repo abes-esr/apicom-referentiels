@@ -21,10 +21,10 @@ class ReferentielsApplicationTests {
     }
 
     @Test
-    @DisplayName("getLanguesOk")
+    @DisplayName("getLangsISO639_2BOk")
     void getLanguesOk() {
-        assertThat(service.getLangues().size()>100);
-        assertThat(service.getLangues()).extracting("code").containsSequence("fre");
+        assertThat(service.getLangsISO639_2B().size()>100);
+        assertThat(service.getLangsISO639_2B()).extracting("code").containsSequence("fre");
     }
 
     @Test
