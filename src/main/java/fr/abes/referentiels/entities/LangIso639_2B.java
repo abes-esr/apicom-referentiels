@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Langue {
+public class LangIso639_2B {
     @Id
     private String code;
     private String codecourt;

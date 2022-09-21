@@ -12,7 +12,7 @@ import java.util.List;
 public class ReferentielService {
 
     @Autowired
-    private LangueRepository langueRepository;
+    private LangIso639_2BRepository langIso639_2BRepository;
 
     @Autowired
     private LangIso639_3Repository langIso639_3Repository;
@@ -42,9 +42,9 @@ public class ReferentielService {
     private CodeMusicalRepository codeMusicalRepository;
 
 
-    @Cacheable("langues")
-    public List<Langue> getLangues() {
-        return langueRepository.findAllByOrderByLabelAsc();
+    @Cacheable("langISO639_2B")
+    public List<LangIso639_2B> getLangsISO639_2B() {
+        return langIso639_2BRepository.findAllByOrderByLabelAsc();
     }
 
     @Cacheable("langISO639_3")

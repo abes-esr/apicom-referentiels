@@ -10,7 +10,7 @@ import java.util.Date;
 @Component
 public class ScheduledTasks {
     @Caching(evict = {
-            @CacheEvict(value = "langues"),
+            @CacheEvict(value = "langISO639_2B"),
             @CacheEvict(value = "langISO639_3"),
             @CacheEvict(value = "pays"),
             @CacheEvict(value = "geonames"),

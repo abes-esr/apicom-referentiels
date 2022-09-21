@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -20,17 +18,16 @@ public class ReferentielRestControler {
     @Autowired
     ReferentielService service;
 
-    //TODO : supprimer les urls langues, langues.json et langues.xml, pour utiliser à la place iso639-2B
-    @Operation(summary = "Retourne la liste des langues en JSON")
-    @GetMapping(value = {"/v1/langues", "/v1/langues.json", "/v1/iso639-2B", "/v1/iso639-2B.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Langue> langues() {
-        return service.getLangues();
+    @Operation(summary = "Retourne la liste des langues ISO639-2B en JSON")
+    @GetMapping(value = {"/v1/iso639-2B", "/v1/iso639-2B.json"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<LangIso639_2B> langIso6392Bs() {
+        return service.getLangsISO639_2B();
     }
 
-    @Operation(summary = "Retourne la liste des langues en XML")
-    @GetMapping(value = {"/v1/langues.xml", "/v1/iso639-2B.xml"}, produces = MediaType.APPLICATION_XML_VALUE)
-    public List<Langue> languesXML() {
-        return service.getLangues();
+    @Operation(summary = "Retourne la liste des langues ISO639-2B en XML")
+    @GetMapping(value = {"/v1/iso639-2B.xml"}, produces = MediaType.APPLICATION_XML_VALUE)
+    public List<LangIso639_2B> langIso6392BsXML() {
+        return service.getLangsISO639_2B();
     }
 
 
